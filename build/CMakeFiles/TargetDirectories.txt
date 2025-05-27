@@ -1,0 +1,3 @@
+/Users/ebiharamari/Sources/spherical_warper_pybind/build/CMakeFiles/spherical_warper.dir
+/Users/ebiharamari/Sources/spherical_warper_pybind/build/CMakeFiles/edit_cache.dir
+/Users/ebiharamari/Sources/spherical_warper_pybind/build/CMakeFiles/rebuild_cache.dir
