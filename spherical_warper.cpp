@@ -20,19 +20,14 @@ py::array_t<uint8_t> warp_spherical(
     int width  = buf.shape[1];
     int channels = buf.shape[2];
 
-    int cv_type;
-    if (channels == 4) {
-        cv_type = CV_8UC4;
-    } else if (channels == 3) {
-        cv_type = CV_8UC3;
-    } else {
-        throw std::runtime_error("Only 3 or 4 channel images are supported");
-    }
-
+    int cv_type = CV_8UC4;
     cv::Mat src(height, width, cv_type, static_cast<uchar*>(buf.ptr));
 
     // カメラ行列と回転行列を初期化
+    // cv::Mat クラスの「コンストラクタ」**を使って 3×3の32ビット浮動小数点行列を作成
+    // カメラの内部行列
     cv::Mat K(3, 3, CV_32F);
+    // 視点の向きの回転行列
     cv::Mat R(3, 3, CV_32F);
     for (int i = 0; i < 3; ++i)
         for (int j = 0; j < 3; ++j) {
@@ -42,8 +37,7 @@ py::array_t<uint8_t> warp_spherical(
 
     cv::detail::SphericalWarper warper(scale);
     cv::Mat warped;
-
-    warper.warp(src, K, R, INTER_LINEAR, BORDER_CONSTANT, warped);
+    warper.warp(src, K, R, INTER_LINEAR, BORDER_TRANSPARENT, warped);
 
     return py::array_t<uint8_t>(
         {warped.rows, warped.cols, channels},
