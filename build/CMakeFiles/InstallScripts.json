@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/Users/ebiharamari/Sources/spherical_warper_pybind/build/cmake_install.cmake"
+		"/Users/marimurotani/Sources/spherical_warper_pybind/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

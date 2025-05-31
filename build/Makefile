@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ebiharamari/Sources/spherical_warper_pybind
+CMAKE_SOURCE_DIR = /Users/marimurotani/Sources/spherical_warper_pybind
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ebiharamari/Sources/spherical_warper_pybind/build
+CMAKE_BINARY_DIR = /Users/marimurotani/Sources/spherical_warper_pybind/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /Users/ebiharamari/Sources/spherical_warper_pybind/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/opt/homebrew/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/homebrew/Cellar/cmake/3.29.6/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ebiharamari/Sources/spherical_warper_pybind/build/CMakeFiles /Users/ebiharamari/Sources/spherical_warper_pybind/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/marimurotani/Sources/spherical_warper_pybind/build/CMakeFiles /Users/marimurotani/Sources/spherical_warper_pybind/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ebiharamari/Sources/spherical_warper_pybind/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/marimurotani/Sources/spherical_warper_pybind/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
